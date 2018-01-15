@@ -20,7 +20,7 @@
             router
                 .on({
                     '/courses': function () {
-                        $("#route").text('/courses');
+                        $("#route").html('<h1>/courses</h1>');
                     },
                     '/course/:id': function (params, query) {
                         $("#route").html(
@@ -28,10 +28,10 @@
                             +'<br>query : '+JSON.stringify(query));
                     },
                     '/about': function () {
-                        $("#route").text('/about');
+                        $("#route").html('<h1>/about</h1>');
                     },
                     '*': function () {
-                        $("#route").text('*');
+                        $("#route").html('<h1>*</h1>');
                     }
                 })
                 .resolve();
