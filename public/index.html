@@ -16,18 +16,21 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script>
         $(function () {
-            var router = new Navigo();
+            var router = new Navigo(window.location.origin);
             router
                 .on({
                     '/courses': function () {
+                        console.log(window.location.href);
                         $("#route").html('<h1>/courses</h1>');
                     },
                     '/course/:id': function (params, query) {
+                        console.log(window.location.href);
                         $("#route").html(
                             '<h1>/course</h1><br>params : '+JSON.stringify(params)
                             +'<br>query : '+JSON.stringify(query));
                     },
                     '/about': function () {
+                        console.log(window.location.href);
                         $("#route").html('<h1>/about</h1>');
                     },
                     '*': function () {
